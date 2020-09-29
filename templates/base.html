@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div>
+    <h1>Название сайта</h1>
+    {% include './includes/main_menu.html' %}
+    <hr>
+</div>
+<div>
+    {% block body %}
+    {% endblock %}
+</div>
+<div>
+    <hr>
+    <h2>footer</h2>
+</div>
+</body>
+</html>
