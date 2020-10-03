@@ -1,8 +1,14 @@
-from setup.views import main_view, create_course, create_category, list_category
+from setup.views import main_view, create_course, CategoryListView, CategoryCreateView, StudentListView, \
+    StudentCreateView, AddStudentByCourseCreateView
 
 URLS = {
     '/': main_view,
-    '/category-list/': list_category,
+    '/category-list/': CategoryListView(),
+    '/student-list/': StudentListView(),
+
     '/create-course/': create_course,
-    '/create-category/': create_category,
+    '/create-category/': CategoryCreateView(),
+    '/create-student/': StudentCreateView(),
+
+    '/add-student/': AddStudentByCourseCreateView(),
 }
