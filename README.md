@@ -1,7 +1,7 @@
 # framework
 
 
-```cd /mnt/d/GitHub_repository/framework```
+```cd /mnt/d/GitHub_repository/study_site```
 
 ```uwsgi --http :8000 --wsgi-file run.py```
 ***
