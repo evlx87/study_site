@@ -46,3 +46,8 @@ def create_category(request):
     else:
         categories = site.categories
         return '200 OK', render('create_category.html', categories=categories)
+
+
+def list_category(request):
+    logger.log('Список категорий')
+    return '200 OK', render('category_list.html')
