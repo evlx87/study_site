@@ -59,11 +59,6 @@ class CoreApp:
             start_response('404 NOT FOUND', [('Content-Type', 'text/html')])
             return [b"Not Found"]
 
-    def add_route(self, url):
-        def inner(view):
-            self.urls[url] = view
-        return inner
-
 
 class DebugApp(CoreApp):
     def __init__(self, urls, front_controllers):

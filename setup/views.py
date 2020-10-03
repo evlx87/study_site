@@ -3,7 +3,6 @@ from base.cbv import CreateView, ListView
 from setup.models import TrainingSite
 from base.templator import render
 
-
 site = TrainingSite()
 logger = Logger('main')
 
@@ -88,10 +87,8 @@ class AddStudentByCourseCreateView(CreateView):
         course.add_student(student)
 
 
-@application.add_route('/copy-course/')
 def copy_course(request):
     request_params = request['request_params']
-    # print(request_params)
     name = request_params['name']
     old_course = site.get_course(name)
     if old_course:
@@ -99,16 +96,4 @@ def copy_course(request):
         new_course = old_course.clone()
         new_course.name = new_name
         site.courses.append(new_course)
-
     return '200 OK', render('course_list.html', objects_list=site.courses)
-
-
-# @application.add_route('/category-list/')
-# def category_list(request):
-#     logger.log('Список категорий')
-#     return '200 OK', render('category_list.html', objects_list=site.categories)
-
-
-@application.add_route('/api/')
-def course_api(request):
-    return '200 OK', BaseSerializer(site.courses).save()
