@@ -24,13 +24,11 @@ class SingletonByName(type):
 
 
 class Observer:
-
     def update(self, subject):
         pass
 
 
 class Subject:
-
     def __init__(self):
         self.observers = []
 
