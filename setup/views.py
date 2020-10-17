@@ -57,8 +57,12 @@ class CategoryListView(ListView):
 
 
 class StudentListView(ListView):
-    queryset = site.students
+    # queryset = site.students
     template_name = 'student_list.html'
+
+    def get_queryset(self):
+        mapper = MapperRegistry.get_current_mapper('student')
+        return mapper.all()
 
 
 class StudentCreateView(CreateView):
